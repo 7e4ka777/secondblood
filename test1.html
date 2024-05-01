@@ -7809,7 +7809,21 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s1">'C:</span><span class="se">\\</span><span class="s1">Project PISA</span><span class="se">\\</span><span class="s1">cy08msp_stu_qqq.sas7bdat'</span>
+
+<span class="n">columns_to_load</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"CNT"</span><span class="p">,</span> <span class="s2">"OECD"</span><span class="p">,</span> <span class="s2">"ST004D01T"</span><span class="p">,</span> <span class="s2">"ST001D01T"</span><span class="p">,</span> <span class="s2">"ST126Q01TA"</span><span class="p">,</span> <span class="s2">"ST125Q01NA"</span><span class="p">,</span>
+    <span class="s2">"PV1MATH"</span><span class="p">,</span> <span class="s2">"PV2MATH"</span><span class="p">,</span> <span class="s2">"PV3MATH"</span><span class="p">,</span> <span class="s2">"PV4MATH"</span><span class="p">,</span> <span class="s2">"PV5MATH"</span><span class="p">,</span>
+    <span class="s2">"PV1READ"</span><span class="p">,</span> <span class="s2">"PV2READ"</span><span class="p">,</span> <span class="s2">"PV3READ"</span><span class="p">,</span> <span class="s2">"PV4READ"</span><span class="p">,</span> <span class="s2">"PV5READ"</span><span class="p">,</span>
+    <span class="s2">"PV1SCIE"</span><span class="p">,</span> <span class="s2">"PV2SCIE"</span><span class="p">,</span> <span class="s2">"PV3SCIE"</span><span class="p">,</span> <span class="s2">"PV4SCIE"</span><span class="p">,</span> <span class="s2">"PV5SCIE"</span><span class="p">,</span>
+    <span class="s2">"ESCS"</span><span class="p">,</span> <span class="s2">"IMMIG"</span><span class="p">,</span> <span class="s2">"BELONG"</span><span class="p">,</span> <span class="s2">"BULLIED"</span><span class="p">,</span> <span class="s2">"FEELSAFE"</span><span class="p">,</span>
+    <span class="s2">"STUDYHMW"</span><span class="p">,</span> <span class="s2">"DISCLIM"</span><span class="p">,</span> <span class="s2">"ADMINMODE"</span><span class="p">,</span> <span class="s2">"ST019CQ01T"</span><span class="p">,</span>
+    <span class="s2">"ICTHOME"</span><span class="p">,</span> <span class="s2">"MATHMOT"</span>
+<span class="p">]</span>
+
+<span class="n">df</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">pyreadstat</span><span class="o">.</span><span class="n">read_sas7bdat</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="n">columns_to_load</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
